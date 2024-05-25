@@ -2,6 +2,7 @@ import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import Members from "@/views/Members.vue";
 import Service from "@/views/Service.vue";
+import Time from "@/views/Time.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/service",
       component: Service,
       name: "service",
+    },
+    {
+      path: "/service/time",
+      component: Time,
+      name: "time",
     },
   ],
 });

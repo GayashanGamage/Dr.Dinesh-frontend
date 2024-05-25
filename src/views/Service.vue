@@ -48,7 +48,7 @@
               <li>Lorem, ipsum dolor.</li>
               <li>Lorem ipsum dolor sit.</li>
             </ol>
-            <button class="book_button">Book Time</button>
+            <button class="book_button" @click="selectTime">Book Time</button>
           </div>
           <div class="tab-content" id="two">
             <h3 class="service_title">service two</h3>
@@ -63,7 +63,7 @@
               <li>Lorem, ipsum dolor.</li>
               <li>Lorem ipsum dolor sit.</li>
             </ol>
-            <button class="book_button">Book Time</button>
+            <button class="book_button" @click="selectTime">Book Time</button>
           </div>
           <div class="tab-content" id="three">
             <h3 class="service_title">service three</h3>
@@ -78,7 +78,7 @@
               <li>Lorem, ipsum.</li>
               <li>Lorem ipsum dolor sit amet.</li>
             </ol>
-            <button class="book_button">Book Time</button>
+            <button class="book_button" @click="selectTime">Book Time</button>
           </div>
           <div class="tab-content" id="four">
             <h3 class="service_title">service four</h3>
@@ -93,7 +93,7 @@
               <li>Lorem, ipsum.</li>
               <li>Lorem ipsum dolor sit amet.</li>
             </ol>
-            <button class="book_button">Book Time</button>
+            <button class="book_button" @click="selectTime">Book Time</button>
           </div>
         </div>
       </div>
@@ -102,6 +102,8 @@
 </template>
 
 <script setup>
+import router from "@/router";
+
 name: "Service";
 
 const showDetails = (button_name, tabName) => {
@@ -117,6 +119,10 @@ const showDetails = (button_name, tabName) => {
 
   document.getElementById(button_name).classList.add("active");
   document.getElementById(tabName).style.display = "block";
+};
+
+const selectTime = () => {
+  router.push("/service/time");
 };
 </script>
 
