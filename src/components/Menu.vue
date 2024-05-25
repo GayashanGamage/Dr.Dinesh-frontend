@@ -1,11 +1,17 @@
 <template>
   <div class="c-level-one-container">
-    <button class="loging_button">Login</button>
+    <button class="loging_button" @click="login">Login</button>
   </div>
 </template>
 
 <script setup>
+import router from "@/router";
+
 name: "Menu";
+
+const login = () => {
+  router.push("/login");
+};
 </script>
 
 <style scoped>
