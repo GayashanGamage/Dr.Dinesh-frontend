@@ -32,7 +32,7 @@ html {
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: burlywood;
+  background-color: #ffeae3;
   height: 100vh;
 }
 .level-one-container {
@@ -62,17 +62,31 @@ body {
 h1 {
   font-size: 4rem;
   font-weight: 900;
+  color: #121481;
 }
 h3 {
   font-weight: 300;
   font-size: 2rem;
   letter-spacing: 2.8px;
+  color: #121481;
 }
 .apointment-button {
   margin: 10px 0px;
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
+  font-weight: 600;
   padding: 10px 20px;
   outline: none;
+  background-color: #121481;
+  color: #ffeae3;
+  border: none;
+  border-radius: 4px;
+}
+.apointment-button:hover {
+  outline: 1px solid #121481;
+  background-color: #ffeae3;
+  color: #121481;
+  border-radius: 4px;
+  cursor: pointer;
 }
 </style>

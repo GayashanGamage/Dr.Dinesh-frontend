@@ -21,5 +21,15 @@ name: "Menu";
   font-family: "Poppins", sans-serif;
   padding: 10px 35px;
   margin: 0 20px;
+  background-color: #121481;
+  color: #ffeae3;
+  border: none;
+  border-radius: 4px;
+}
+.loging_button:hover {
+  background-color: #ffeae3;
+  color: #121481;
+  border: 1px solid #121481;
+  border-radius: 4px;
 }
 </style>
