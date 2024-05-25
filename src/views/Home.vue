@@ -7,7 +7,9 @@
       <h1>Dr. Dinesh Fernando</h1>
       <h3>Your personal couch for academics</h3>
       <div class="level-three-container action-button">
-        <button class="apointment-button">Book an Apointment</button>
+        <button class="apointment-button" @click="servicePage">
+          Book an Apointment
+        </button>
       </div>
     </div>
     <div class="level-two-container footer">
@@ -19,11 +21,16 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import router from "@/router";
 
 name: "Home";
+
+const servicePage = () => {
+  router.push("/service");
+};
 </script>
 
-<style>
+<style scoped>
 .level-one-container {
   /* border: 1px solid black; */
   display: grid;
