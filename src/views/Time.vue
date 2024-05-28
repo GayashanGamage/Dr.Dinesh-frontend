@@ -43,7 +43,14 @@
         </div>
       </div>
       <div class="level-three-container confirm-button">
-        <button class="next-button" id="next-button" disabled>Next</button>
+        <button
+          class="next-button"
+          id="next-button"
+          disabled
+          @click="nextPage()"
+        >
+          Next
+        </button>
       </div>
     </div>
   </div>
@@ -148,6 +155,9 @@ watch(selectedTime, (newTime, oldTime) => {
     document.getElementById("next-button").disabled = false;
   }
 });
+const nextPage = () => {
+  router.push("/register");
+};
 </script>
 
 <style scoped>
