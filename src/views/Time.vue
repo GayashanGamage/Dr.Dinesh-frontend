@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="level-three-container confirm-button">
-        <button class="next-button" disabled>Next</button>
+        <button class="next-button" id="next-button">Next</button>
       </div>
     </div>
   </div>
@@ -51,12 +51,12 @@
 
 <script setup>
 import router from "@/router";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 name: "Time";
 
 const times = ref([]);
-const selectedDate = ref();
-const selectedTime = ref();
+const selectedDate = ref(null);
+const selectedTime = ref(null);
 
 const bookingDate = {
   one: {
@@ -129,6 +129,7 @@ const showTime = (time) => {
   // console.log(time["avilable"]);
   times.value = time["avilable"];
   selectedDate.value = time["date"];
+  selectedTime.value = null;
 };
 onMounted(() => {
   times.value = bookingDate["one"]["avilable"];
@@ -136,6 +137,13 @@ onMounted(() => {
 const selecteTime = (abc) => {
   selectedTime.value = new Date(abc).getHours();
 };
+watch(selectedTime, (newTime, oldTime) => {
+  if (newTime === null) {
+    document.getElementById("next-button").disabled = true;
+  } else {
+    document.getElementById("next-button").disabled = false;
+  }
+});
 </script>
 
 <style scoped>
