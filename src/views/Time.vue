@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="level-three-container confirm-button">
-        <button class="next-button" id="next-button">Next</button>
+        <button class="next-button" id="next-button" disabled>Next</button>
       </div>
     </div>
   </div>
@@ -133,9 +133,13 @@ const showTime = (time) => {
 };
 onMounted(() => {
   times.value = bookingDate["one"]["avilable"];
+  selectedDate.value = bookingDate["one"]["date"];
 });
 const selecteTime = (abc) => {
-  selectedTime.value = new Date(abc).getHours();
+  // selectedTime.value = new Date(abc).getHours();
+  selectedTime.value = `${new Date(abc).getHours()}:00 - ${
+    new Date(abc).getHours() + 1
+  }:00`;
 };
 watch(selectedTime, (newTime, oldTime) => {
   if (newTime === null) {
@@ -201,7 +205,7 @@ watch(selectedTime, (newTime, oldTime) => {
 .selected-time {
   grid-area: selecte-time;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border: 1px solid black;
   margin: 10px;
